@@ -1,0 +1,32 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    TO_DO_LIST.txt                                     :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: smarin-a <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/12/08 17:24:40 by smarin-a          #+#    #+#              #
+#    Updated: 2023/12/08 17:27:25 by smarin-a         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# Enlaces de interes #
+
+ https://harm-smits.github.io/42docs/libs
+
+# To Do List #
+
+- miniLibX
+
+	- Hacer un circulo, hacer un triangulo, hacer un hexágono
+	- Añadir gradientes, realizar arcoíris y sentirme cómodo usando colores RGB
+	- Intentar crear textura, generando las imágenes en un bucle.
+
+- BitShifting
+
+	-Aprender la base del Bitshifting
+
+- soLong
+
+	- Mirar los apartados del tutorial Events
+	- Terminar Makefile
