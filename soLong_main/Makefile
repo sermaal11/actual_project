@@ -1,5 +1,5 @@
 # Nombre del programa de salida
-NAME = so_long.a
+NAME = so_long
 
 # Norma de compilación
 CC = gcc
@@ -8,7 +8,11 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # Fuentes .c
-SRCS =
+SRCS = soLong.c
+
+# Ruta a la mlx
+
+MLX = ./mlx/libmlx.a
 
 # Normas que convierten los .c en .o
 OBJS = $(SRCS:.c=.o)
@@ -16,20 +20,24 @@ OBJS = $(SRCS:.c=.o)
 # Regla principal para construir el programa principal
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	# Crear una biblioteca estática con los objetos (.o)
-	ar -crs $@ $^
+$(NAME): $(OBJS) $(MLX)
 	# Compilar el programa principal usando la biblioteca estática y las 
 	# bibliotecas gráficas necesarias
-	$(CC) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $@
+	$(CC) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 # Regla para compilar archivos .c en objetos .o
 %.o : %.c
-	$(CC) -c $(CFLAGS) -Imlx $< -o $@
+	$(CC) $(CFLAGS) -Imlx -c $< -o $@
+
+# REgla MLX
+
+$(MLX) :
+	make -C ./mlx
 
 # Regla para limpiar archivos objeto (.o)
 clean:
 	rm -f *.o
+	make clean -C ./mlx
 
 # Regla para limpiar archivos objeto y el programa de salida
 fclean: clean
