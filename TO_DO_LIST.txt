@@ -14,19 +14,6 @@
 
  https://harm-smits.github.io/42docs/libs
 
-# To Do List #
+# Compilation #
 
-- miniLibX
-
-	- Hacer un circulo, hacer un triangulo, hacer un hexágono
-	- Añadir gradientes, realizar arcoíris y sentirme cómodo usando colores RGB
-	- Intentar crear textura, generando las imágenes en un bucle.
-
-- BitShifting
-
-	-Aprender la base del Bitshifting
-
-- soLong
-
-	- Mirar los apartados del tutorial Events
-	- Terminar Makefile
+gcc -Wall -Wextra -Werror -Lmlx -lmlx -framework OpenGL -framework AppKit function_name.c
