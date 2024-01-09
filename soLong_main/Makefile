@@ -5,10 +5,20 @@ NAME = so_long
 CC = gcc
 
 # Flags de compilación
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra #-Werror
 
 # Fuentes .c
-SRCS = soLong.c
+SRCS =	so_long.c \
+		ft_error.c \
+		ft_split.c \
+		ft_strlen.c \
+		ft_substr.c \
+		ft_verify_extension.c \
+		ft_setmap.c \
+		ft_init_map_verify.c \
+		ft_strlen_vert.c \
+		ft_count_objects.c \
+		ft_player_possition.c
 
 # Ruta a la mlx
 
@@ -21,9 +31,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS) $(MLX)
-	# Compilar el programa principal usando la biblioteca estática y las 
-	# bibliotecas gráficas necesarias
-	$(CC) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -g3 -o $(NAME)
 
 # Regla para compilar archivos .c en objetos .o
 %.o : %.c
